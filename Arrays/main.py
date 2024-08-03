@@ -1,5 +1,5 @@
 import flet
-from flet import *
+from flet import * # type: ignore
 
 
 def main(page: Page):
@@ -9,7 +9,7 @@ def main(page: Page):
     anyadir = []
 
     def anyadir_lista(e):
-        if name is None:
+        if not name or passw:
             print("Falta algun dato")
         else:
             anyadir.append({name.value, passw.value})
@@ -17,7 +17,7 @@ def main(page: Page):
                 Container(
                     Row(
                         [
-                            Text("User: " + name.value),
+                            Text("User: " + (name.value),
                             Text("Password: " + passw.value),
                         ]
                     )
